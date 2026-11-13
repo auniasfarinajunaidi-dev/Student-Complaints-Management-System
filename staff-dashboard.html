@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Staff Dashboard - Student Complaint System</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo_aduan.png"
+                     alt="Student Complaint System Logo"
+                     class="brand-logo">
+
+                Student Complaint System
+            </a>
+
+            <a href="login.html" class="btn btn-purple">
+                <i class="bi bi-box-arrow-right"></i>
+                Logout
+            </a>
+
+        </div>
+    </nav>
+
+
+    <!-- MAIN DASHBOARD -->
+    <main class="container py-4">
+
+        <!-- DASHBOARD HEADING -->
+        <div class="dashboard-heading">
+
+            <p class="text-muted mb-1">Staff Portal</p>
+
+            <h2>Welcome, Staff!</h2>
+
+            <p>
+                Manage and monitor student complaints at UiTM Machang, Kelantan.
+            </p>
+
+        </div>
+
+
+        <!-- STATISTICS CARDS -->
+        <div class="row g-4 mb-5">
+
+            <!-- Total Complaints -->
+            <div class="col-md-4">
+                <div class="dashboard-card">
+
+                    <div class="d-flex justify-content-between align-items-center">
+
+                        <div>
+                            <h3>0</h3>
+                            <p>Total Complaints</p>
+                        </div>
+
+                        <i class="bi bi-chat-square-text fs-1"
+                           style="color: #9275c9;"></i>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Pending Complaints -->
+            <div class="col-md-4">
+                <div class="dashboard-card">
+
+                    <div class="d-flex justify-content-between align-items-center">
+
+                        <div>
+                            <h3>0</h3>
+                            <p>Pending Complaints</p>
+                        </div>
+
+                        <i class="bi bi-hourglass-split fs-1"
+                           style="color: #e5a93d;"></i>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Resolved Complaints -->
+            <div class="col-md-4">
+                <div class="dashboard-card">
+
+                    <div class="d-flex justify-content-between align-items-center">
+
+                        <div>
+                            <h3>0</h3>
+                            <p>Resolved Complaints</p>
+                        </div>
+
+                        <i class="bi bi-check-circle fs-1"
+                           style="color: #36a675;"></i>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- QUICK ACTIONS -->
+        <section class="mb-5">
+
+            <h4 class="fw-bold mb-4">Quick Actions</h4>
+
+            <div class="row g-4">
+
+                <!-- Manage Complaints -->
+                <div class="col-md-6">
+
+                    <a href="manage-complaints.html" class="action-card">
+
+                        <i class="bi bi-clipboard-check"></i>
+
+                        <h5>Manage Complaints</h5>
+
+                        <p>
+                            View, search and manage all student complaints.
+                            Check complaint details and update complaint status.
+                        </p>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STAFF INFORMATION -->
+        <div class="content-card">
+
+            <h4>
+                <i class="bi bi-info-circle me-2"></i>
+                Staff Information
+            </h4>
+
+            <p class="mb-2">
+                <strong>System:</strong>
+                Student Complaint Management System
+            </p>
+
+            <p class="mb-2">
+                <strong>Location:</strong>
+                UiTM Machang, Kelantan
+            </p>
+
+            <p class="mb-0">
+                <strong>Role:</strong>
+                Staff Administrator
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer text-center mt-5">
+
+        <div class="container">
+
+            <p class="mb-0">
+                &copy; 2026 Student Complaint Management System.
+                UiTM Machang, Kelantan.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="js/staff.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

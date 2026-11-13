@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Complaint System | UiTM Kelantan</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="index.html">
+            <img src="images/logo_aduan.png"
+             alt="Logo Sistem Pengurusan Aduan UiTM"
+             class="brand-logo">
+
+            Student Complaint System
+        </a>
+
+        <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <!-- MENU INFO -->
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold" href="#statistics">INFO</a>
+                </li>
+
+                <!-- BUTTON LOGIN -->
+                <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                    <a href="login.html" class="btn btn-purple">
+                        Login
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- HERO SECTION -->
+<section class="hero-section" id="home">
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+        <div class="row">
+            <div class="col-lg-8">
+
+                <h1 class="hero-title">UiTM Machang, Kelantan</h1>
+
+                <h2 class="mb-3 fw-semibold">
+                    Student Complaint Management System
+                </h2>
+
+                <p class="hero-description">
+                    A simple and convenient platform for students to submit
+                    complaints and monitor their complaint status.
+                </p>
+
+                <a href="login.html" class="btn btn-purple btn-lg mt-3">
+                    Get Started
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STATISTICS SECTION -->
+<section class="statistics-section section-padding" id="statistics">
+    <div class="container">
+
+        <!-- SUMMARY STATISTICS -->
+        <div class="row text-center g-3 mb-5">
+
+            <div class="col-3">
+                <h2>120</h2>
+                <p>Total Complaints</p>
+            </div>
+
+            <div class="col-3">
+                <h2>25</h2>
+                <p>Pending Complaints</p>
+            </div>
+
+            <div class="col-3">
+                <h2>85</h2>
+                <p>Resolved Complaints</p>
+            </div>
+
+            <div class="col-3">
+                <h2>10</h2>
+                <p>Categories</p>
+            </div>
+
+        </div>
+
+        <!-- CHARTS -->
+        <div class="row g-4">
+
+            <div class="col-lg-7">
+                <div class="chart-card">
+                    <h5 class="chart-heading">Monthly Complaints</h5>
+                    <p class="chart-label">
+                        Number of complaints reported each month
+                    </p>
+                    <div class="chart-container">
+                        <canvas id="monthlyChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="chart-card">
+                    <h5 class="chart-heading">Complaints by Category</h5>
+                    <p class="chart-label">
+                        Distribution of complaint categories
+                    </p>
+                    <div class="chart-container">
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container text-center">
+        <p class="mb-0">
+            &copy; 2026 Student Complaint System. All Rights Reserved.
+        </p>
+
+    </div>
+</footer>
+
+<!-- CHART.JS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+    // Monthly Complaints Chart
+    const monthlyCanvas = document.getElementById('monthlyChart');
+
+    new Chart(monthlyCanvas, {
+        type: 'bar',
+
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+
+            datasets: [{
+                label: 'Number of Complaints',
+                data: [18, 24, 15, 29, 21, 32],
+                backgroundColor: '#a78bda',
+                borderRadius: 6
+            }]
+        },
+
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+
+    // Complaint Category Chart
+    const categoryCanvas = document.getElementById('categoryChart');
+
+    new Chart(categoryCanvas, {
+        type: 'doughnut',
+
+        data: {
+            labels: [
+                'Maintenance',
+                'Cleanliness',
+                'Accommodation',
+                'Facilities',
+                'Safety'
+            ],
+
+            datasets: [{
+                data: [75, 55, 48, 40, 30],
+
+                backgroundColor: [
+                    '#9275c9',
+                    '#b69add',
+                    '#d2bce9',
+                    '#e5d8f2',
+                    '#8061b5'
+                ]
+            }]
+        },
+
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

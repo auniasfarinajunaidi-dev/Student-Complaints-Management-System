@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Submit Complaint | Student Complaint System</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+        <div class="container">
+
+            <a class="navbar-brand d-flex align-items-center" href="student-dashboard.html">
+                <img src="images/logo_aduan.png"
+                     alt="UiTM Complaint System Logo"
+                     class="brand-logo">
+
+                <span class="fw-bold">Student Complaint System</span>
+            </a>
+
+            <a href="student-dashboard.html" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left"></i> Back to Dashboard
+            </a>
+
+        </div>
+    </nav>
+
+
+    <!-- COMPLAINT FORM -->
+    <div class="container py-5">
+
+        <div class="dashboard-heading mb-4">
+            <p class="text-muted mb-1">Student Portal</p>
+            <h2>Submit a Complaint</h2>
+            <p class="text-muted">
+                Please complete the form below to submit your complaint.
+            </p>
+        </div>
+
+
+        <div class="dashboard-card p-4">
+
+            <form id="complaintForm">
+
+                <!-- STUDENT ID -->
+                <div class="mb-3">
+                    <label for="studentID" class="form-label">
+                        Student ID
+                    </label>
+
+                    <input type="text"
+                           class="form-control"
+                           id="studentID"
+                           readonly>
+                </div>
+
+
+                <!-- COMPLAINT CATEGORY -->
+                <div class="mb-3">
+                    <label for="category" class="form-label">
+                        Complaint Category
+                    </label>
+
+                    <select class="form-select" id="category" required>
+                        <option value="">Select Complaint Category</option>
+                        <option value="Maintenance">Maintenance</option>
+                        <option value="Cleanliness">Cleanliness</option>
+                        <option value="Accommodation">Accommodation</option>
+                        <option value="Facilities">Facilities</option>
+                        <option value="Safety">Safety</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+
+
+                <!-- COLLEGE -->
+                <div class="mb-3">
+                    <label for="college" class="form-label">
+                        College
+                    </label>
+
+                    <select class="form-select" id="college" required>
+                        <option value="">Select Your College</option>
+                        <option value="Kolej Dato Onn (DO)">Kolej Dato Onn (DO)</option>
+                        <option value="Kolej Tun Hussein Onn (THO)">Kolej Tun Hussein Onn (THO)</option>
+                        <option value="Kolej Tunku Abdul Rahman (TAR)">Kolej Tunku Abdul Rahman (TAR)</option>
+                        <option value="Kolej Tun Dr Mahathir (TDM)">Kolej Tun Dr Mahathir (TDM)</option>
+                        <option value="Kolej Tun Abdul Razak (TR)">Kolej Tun Abdul Razak (TR)</option>
+                    </select>
+                </div>
+
+
+                <!-- ROOM NUMBER -->
+                <div class="mb-3">
+                    <label for="roomNumber" class="form-label">
+                        Room Number
+                    </label>
+
+                    <input type="text"
+                           class="form-control"
+                           id="roomNumber"
+                           placeholder="Example: A-203"
+                           required>
+                </div>
+
+
+                <!-- COMPLAINT DESCRIPTION -->
+                <div class="mb-3">
+                    <label for="description" class="form-label">
+                        Complaint Description
+                    </label>
+
+                    <textarea class="form-control"
+                              id="description"
+                              rows="5"
+                              placeholder="Explain your complaint in detail..."
+                              required></textarea>
+                </div>
+
+
+                <!-- SUPPORTING IMAGE -->
+                <div class="mb-4">
+                    <label for="attachment" class="form-label">
+                        Supporting Image (Optional)
+                    </label>
+
+                    <input type="file"
+                           class="form-control"
+                           id="attachment"
+                           accept="image/*">
+                </div>
+
+
+                <!-- BUTTONS -->
+                <button type="submit" class="btn btn-purple">
+                    <i class="bi bi-send"></i> Submit Complaint
+                </button>
+
+                <a href="student-dashboard.html"
+                   class="btn btn-outline-secondary ms-2">
+                    Cancel
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="footer text-center py-3">
+        <p class="mb-0">
+            © 2026 Student Complaint Management System | UiTM Machang, Kelantan
+        </p>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="js/submit-complaints.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
