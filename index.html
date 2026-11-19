@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,234 +13,378 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
-
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+<!-- ================= NAVIGATION BAR ================= -->
+
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
     <div class="container">
 
-        <a class="navbar-brand fw-bold" href="index.html">
-            <img src="images/logo_aduan.png"
-             alt="Logo Sistem Pengurusan Aduan UiTM"
-             class="brand-logo">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
 
-            Student Complaint System
+            <img src="images/logo_aduan.png"
+                 alt="UiTM Complaint System Logo"
+                 class="brand-logo">
+
+            <div class="brand-text">
+                <span class="brand-name">UiTM KELANTAN</span>
+                <small>STUDENT COMPLAINT SYSTEM</small>
+            </div>
+
         </a>
 
         <button class="navbar-toggler" type="button"
-            data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarMenu">
+
             <ul class="navbar-nav ms-auto align-items-lg-center">
 
-                <!-- MENU INFO -->
                 <li class="nav-item">
-                    <a class="nav-link fw-semibold" href="#statistics">INFO</a>
+                    <a class="nav-link active" href="#home">Home</a>
                 </li>
 
-                <!-- BUTTON LOGIN -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#statistics">Statistics</a>
+                </li>
+
                 <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-                    <a href="login.html" class="btn btn-purple">
+                    <a href="login.html" class="btn btn-login">
+                        <i class="bi bi-person-circle me-1"></i>
                         Login
                     </a>
                 </li>
 
             </ul>
+
         </div>
     </div>
 </nav>
 
 
-<!-- HERO SECTION -->
+<!-- ================= HERO SECTION ================= -->
+
 <section class="hero-section" id="home">
+
     <div class="hero-overlay"></div>
 
     <div class="container hero-content">
-        <div class="row">
+
+        <div class="row align-items-center">
+
             <div class="col-lg-8">
 
-                <h1 class="hero-title">UiTM Machang, Kelantan</h1>
+                <span class="hero-label">
+                    <i class="bi bi-mortarboard-fill me-2"></i>
+                    UiTM Machang, Kelantan
+                </span>
 
-                <h2 class="mb-3 fw-semibold">
-                    Student Complaint Management System
-                </h2>
+                <h1 class="hero-title">
+                    Student Complaint
+                    <span>Management System</span>
+                </h1>
 
                 <p class="hero-description">
-                    A simple and convenient platform for students to submit
-                    complaints and monitor their complaint status.
+                    A centralized platform for students to submit complaints,
+                    monitor complaint progress and access support services
+                    more easily and conveniently.
                 </p>
 
-                <a href="login.html" class="btn btn-purple btn-lg mt-3">
-                    Get Started
-                    <i class="bi bi-arrow-right"></i>
-                </a>
+                <div class="hero-buttons">
+
+                    <a href="login.html" class="btn btn-primary-custom">
+                        Get Started
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+
+                    <a href="#statistics" class="btn btn-outline-custom">
+                        View Statistics
+                    </a>
+
+                </div>
 
             </div>
+
         </div>
+
     </div>
+
+    <div class="hero-bottom"></div>
+
 </section>
 
-<!-- STATISTICS SECTION -->
-<section class="statistics-section section-padding" id="statistics">
+
+<!-- ================= STATISTICS SECTION ================= -->
+
+<section class="statistics-section" id="statistics">
+
     <div class="container">
 
-        <!-- SUMMARY STATISTICS -->
-        <div class="row text-center g-3 mb-5">
+        <!-- SECTION HEADING -->
 
-            <div class="col-3">
-                <h2>120</h2>
-                <p>Total Complaints</p>
+        <div class="section-heading">
+
+            <span class="section-label">SYSTEM OVERVIEW</span>
+
+            <h2>Complaint Statistics</h2>
+
+            <p>
+                An overview of student complaints and their current status.
+            </p>
+
+        </div>
+
+
+        <!-- SUMMARY CARDS -->
+
+        <div class="row g-4 mb-5">
+
+            <!-- TOTAL COMPLAINTS -->
+
+            <div class="col-6 col-lg-3">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon icon-purple">
+                        <i class="bi bi-clipboard-data"></i>
+                    </div>
+
+                    <div class="stat-info">
+                        <h3>120</h3>
+                        <p>Total Complaints</p>
+                    </div>
+
+                    <span class="stat-description">
+                        All submitted complaints
+                    </span>
+
+                </div>
+
             </div>
 
-            <div class="col-3">
-                <h2>25</h2>
-                <p>Pending Complaints</p>
+
+            <!-- PENDING COMPLAINTS -->
+
+            <div class="col-6 col-lg-3">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon icon-orange">
+                        <i class="bi bi-clock-history"></i>
+                    </div>
+
+                    <div class="stat-info">
+                        <h3>25</h3>
+                        <p>Pending Complaints</p>
+                    </div>
+
+                    <span class="stat-description">
+                        Awaiting action
+                    </span>
+
+                </div>
+
             </div>
 
-            <div class="col-3">
-                <h2>85</h2>
-                <p>Resolved Complaints</p>
+
+            <!-- RESOLVED COMPLAINTS -->
+
+            <div class="col-6 col-lg-3">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon icon-green">
+                        <i class="bi bi-check-circle"></i>
+                    </div>
+
+                    <div class="stat-info">
+                        <h3>85</h3>
+                        <p>Resolved Complaints</p>
+                    </div>
+
+                    <span class="stat-description">
+                        Successfully completed
+                    </span>
+
+                </div>
+
             </div>
 
-            <div class="col-3">
-                <h2>10</h2>
-                <p>Categories</p>
+
+            <!-- CATEGORIES -->
+
+            <div class="col-6 col-lg-3">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon icon-blue">
+                        <i class="bi bi-grid"></i>
+                    </div>
+
+                    <div class="stat-info">
+                        <h3>10</h3>
+                        <p>Categories</p>
+                    </div>
+
+                    <span class="stat-description">
+                        Complaint classifications
+                    </span>
+
+                </div>
+
             </div>
 
         </div>
 
-        <!-- CHARTS -->
+
+        <!-- ================= CHARTS ================= -->
+
+        <div class="section-heading chart-section-heading">
+
+            <span class="section-label">ANALYTICS</span>
+
+            <h2>Complaint Analytics</h2>
+
+            <p>
+                Visual insights into complaint trends and categories.
+            </p>
+
+        </div>
+
+
         <div class="row g-4">
 
+            <!-- MONTHLY COMPLAINTS CHART -->
+
             <div class="col-lg-7">
+
                 <div class="chart-card">
-                    <h5 class="chart-heading">Monthly Complaints</h5>
-                    <p class="chart-label">
-                        Number of complaints reported each month
-                    </p>
+
+                    <div class="chart-header">
+
+                        <div>
+                            <h5>Monthly Complaints</h5>
+
+                            <p>
+                                Number of complaints reported each month
+                            </p>
+                        </div>
+
+                        <span class="chart-icon">
+                            <i class="bi bi-bar-chart-line"></i>
+                        </span>
+
+                    </div>
+
                     <div class="chart-container">
                         <canvas id="monthlyChart"></canvas>
                     </div>
+
                 </div>
+
             </div>
 
+
+            <!-- CATEGORY CHART -->
+
             <div class="col-lg-5">
+
                 <div class="chart-card">
-                    <h5 class="chart-heading">Complaints by Category</h5>
-                    <p class="chart-label">
-                        Distribution of complaint categories
-                    </p>
+
+                    <div class="chart-header">
+
+                        <div>
+                            <h5>Complaints by Category</h5>
+
+                            <p>
+                                Distribution of complaint categories
+                            </p>
+                        </div>
+
+                        <span class="chart-icon">
+                            <i class="bi bi-pie-chart"></i>
+                        </span>
+
+                    </div>
+
                     <div class="chart-container">
                         <canvas id="categoryChart"></canvas>
                     </div>
+
                 </div>
+
             </div>
 
         </div>
+
     </div>
+
 </section>
 
-<!-- FOOTER -->
+
+<!-- ================= FOOTER ================= -->
+
 <footer class="footer">
-    <div class="container text-center">
-        <p class="mb-0">
-            &copy; 2026 Student Complaint System. All Rights Reserved.
-        </p>
+
+    <div class="container">
+
+        <div class="row align-items-center gy-3">
+
+            <div class="col-md-7">
+
+                <div class="footer-brand">
+                    <i class="bi bi-mortarboard-fill me-2"></i>
+                    UiTM KELANTAN
+                </div>
+
+                <p class="footer-description">
+                    Student Complaint Management System
+                </p>
+
+            </div>
+
+            <div class="col-md-5 text-md-end">
+
+                <p class="footer-copyright">
+                    &copy; 2026 Student Complaint System.
+                    All Rights Reserved.
+                </p>
+
+            </div>
+
+        </div>
 
     </div>
+
 </footer>
 
-<!-- CHART.JS -->
+
+<!-- ================= JAVASCRIPT LIBRARIES ================= -->
+
+<!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script>
-
-    // Monthly Complaints Chart
-    const monthlyCanvas = document.getElementById('monthlyChart');
-
-    new Chart(monthlyCanvas, {
-        type: 'bar',
-
-        data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-
-            datasets: [{
-                label: 'Number of Complaints',
-                data: [18, 24, 15, 29, 21, 32],
-                backgroundColor: '#a78bda',
-                borderRadius: 6
-            }]
-        },
-
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-
-            plugins: {
-                legend: {
-                    display: false
-                }
-            },
-
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
-
-    // Complaint Category Chart
-    const categoryCanvas = document.getElementById('categoryChart');
-
-    new Chart(categoryCanvas, {
-        type: 'doughnut',
-
-        data: {
-            labels: [
-                'Maintenance',
-                'Cleanliness',
-                'Accommodation',
-                'Facilities',
-                'Safety'
-            ],
-
-            datasets: [{
-                data: [75, 55, 48, 40, 30],
-
-                backgroundColor: [
-                    '#9275c9',
-                    '#b69add',
-                    '#d2bce9',
-                    '#e5d8f2',
-                    '#8061b5'
-                ]
-            }]
-        },
-
-        options: {
-            responsive: true,
-            maintainAspectRatio: false
-        }
-    });
-
-</script>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="js/script.js"></script>
 
 </body>
 </html>
